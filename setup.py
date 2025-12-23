@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='akiyama8192',
+    maintainer='Taiki Akiyama',
     maintainer_email='s24c1005hq@s.chibakoudai.jp',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='数字を入力すると商品名が出てきます',
+    license='BSD-3-Clause',
     extras_require={
         'test': [
             'pytest',

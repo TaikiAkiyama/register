@@ -3,9 +3,9 @@
 <package format="3">
   <name>register</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>数字を入力すると商品名が出てきます</description>
   <maintainer email="s24c1005hq@s.chibakoudai.jp">akiyama8192</maintainer>
-  <license>TODO: License declaration</license>
+  <license>BSD-3-Clause</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
