@@ -6,6 +6,9 @@
   <description>数字を入力すると商品名が出てきます</description>
   <maintainer email="s24c1005hq@s.chibakoudai.jp">akiyama8192</maintainer>
   <license>BSD-3-Clause</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

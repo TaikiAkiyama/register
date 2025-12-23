@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'scanner = register.scanner:main',
+            'display = register.display:main',
         ],
     },
 )
