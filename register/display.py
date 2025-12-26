@@ -13,22 +13,19 @@ class PriceDisplay(Node):
             'scanned_id',
             self.listener_callback,
             10)
-
         self.products = {
-            1: {"name": "りんご", "price": 150},
-            2: {"name": "バナナ", "price": 100},
-            3: {"name": "おにぎり", "price": 120},
-            100: {"name": "高級ステーキ", "price": 5000}
+            1: {"name": "Apple", "price": 150},
+            2: {"name": "Banana", "price": 100},
+            3: {"name": "Onigiri", "price": 120},
         }
 
     def listener_callback(self, msg):
         item_id = msg.data
         if item_id in self.products:
             item = self.products[item_id]
-            # ログ出力でレジの表示を再現
-            self.get_logger().info(f'\n--- レシート ---\n商品名: {item["name"]}\n価格  : ¥{item["price"]}\n----------------')
+            print(f'{item["name"]} {item["price"]}', flush=True)
         else:
-            self.get_logger().warn(f'ID: {item_id} は登録されていません。')
+            pass
 
 def main(args=None):
     rclpy.init(args=args)
@@ -37,9 +34,8 @@ def main(args=None):
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    node.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
