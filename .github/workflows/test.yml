@@ -9,7 +9,7 @@ jobs:
       - name: Build and Test
         run: |
           mkdir -p ~/ros2_ws/src
-          cp -r .~/ros2_ws/src/register
+          cp -r . ~/ros2_ws/src/register
           cd ~/ros2_ws
           apt-get update
           rosdep update
