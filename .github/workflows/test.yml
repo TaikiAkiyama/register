@@ -16,5 +16,5 @@ jobs:
           rosdep install -i --from-path src --rosdistro humble -y
           . /opt/ros/humble/setup.sh
           colcon build
-          source ~/.bashrc
-          ./test.bash
+          source install/setup.bash
+          bash src/register/test/test.bash
