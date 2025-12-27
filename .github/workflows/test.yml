@@ -7,6 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build and Test
+        shell: bash
         run: |
           mkdir -p ~/ros2_ws/src
           cp -r . ~/ros2_ws/src/register
@@ -16,9 +17,9 @@ jobs:
           rosdep update
           rosdep install -i --from-path src --rosdistro humble -y
 
-          . /opt/ros/humble/setup.sh
+          source /opt/ros/humble/setup.sh
           colcon build
 
-          . install/setup.bash
+          source install/setup.bash
 
           bash src/register/test/test.bash
