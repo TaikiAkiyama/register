@@ -7,7 +7,7 @@ dir=~
 
 cd $dir/ros2_ws
 colcon build
-source ~/.bashrc
+source /opt/ros/humble/setup.bash 
 
 export PYTHONUNBUFFERED=1
 
