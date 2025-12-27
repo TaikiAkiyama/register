@@ -11,32 +11,34 @@ class BarcodeScanner(Node):
         super().__init__('barcode_scanner')
         self.publisher_ = self.create_publisher(Int32, 'scanned_id', 10)
 
-    def read_and_publish(self):
+    def scan_loop(self):
         try:
-            line = sys.stdin.readline()
-            if line:
+            while rclpy.ok():
+                line = sys.stdin.readline()
+            
+                if not line:
+                    break
+
+                line = line.strip()
+
+                if not line:
+                    continue
+
                 try:
                     msg = Int32()
-                    msg.data = int(line.strip())
+                    msg.data = int(line)
                     self.publisher_.publish(msg)
                 except ValueError:
                     pass
-            else:
-                return False 
+
         except KeyboardInterrupt:
-            return False
-        return True
+            pass
 
 def main(args=None):
     rclpy.init(args=args)
     node = BarcodeScanner()
-
-    try:
-        while rclpy.ok():
-            if not node.read_and_publish():
-                break
-    except KeyboardInterrupt:
-        pass
+    
+    node.scan_loop()
 
     node.destroy_node()
     rclpy.shutdown()

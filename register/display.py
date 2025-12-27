@@ -4,6 +4,7 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int32
+import sys
 
 class PriceDisplay(Node):
     def __init__(self):
@@ -25,7 +26,7 @@ class PriceDisplay(Node):
             item = self.products[item_id]
             print(f'{item["name"]} {item["price"]}', flush=True)
         else:
-            pass
+            print(f'Error: ID {item_id} not registerred', file=sys.stderr, flush=True) 
 
 def main(args=None):
     rclpy.init(args=args)
