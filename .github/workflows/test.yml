@@ -1,0 +1,20 @@
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    container: ryuichiueda/ubuntu22.04-ros2:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Test
+        run: |
+          mkdir -p ~/ros2_ws/src
+          cp -r .~/ros2_ws/src/register
+          cd ~/ros2_ws
+          apt-get update
+          rosdep update
+          rosdep install -i --from-path src --rosdistro humble -y
+          . /opt/ros/humble/setup.sh
+          colcon build
+          source ~/.bashrc
+          ./test.bash
