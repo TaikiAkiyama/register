@@ -18,7 +18,7 @@ rm -f $LOGfile
 
 stdbuf -oL ros2 run register display> $LOGfile 2>&1 &
 PID=$!
-sleep 3
+sleep 10
 
 (sleep 2; echo "1") | ros2 run register scanner 
 sleep 2
