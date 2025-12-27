@@ -12,7 +12,6 @@ source /opt/ros/humble/setup.bash
 export PYTHONUNBUFFERED=1
 
 rm -rf /dev/shm/fastrtps_*
-pkill -f register
 LOGfile=/tmp/register.log
 rm -f $LOGfile
 
