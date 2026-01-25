@@ -18,16 +18,15 @@ ROS2で動作する、バーコードレジのシミュレーターシステム�
 - データベースと照合し、該当する商品名と価格を画面に表示します。
 - 登録されていないIDを受信した場合はエラーメッセージを表示します。
 ## トピック
-`/scanned_id`(型: `std_msgs/msg/String`)
+`/scanned_id`(`std_msgs/msg/String`)
 - 商品IDを文字列で送受信するためのトピックです。
 ## インストール
-ROS 2のワークスペースに移動してクローンし、ビルドします。
 launchファイルを使用する場合は`xterm`をインストールして下さい。
 ```
 $ sudo apt install xterm
 ```
 
-## 使い方  
+## 実行方法 
 launchファイルを使用してシステムを起動します。コマンドを実行すると、`xterm`が立ち上がります。
 ```
 $ ros2 launch register scan_display.launch.py
