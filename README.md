@@ -32,7 +32,7 @@ launchファイルを使用してシステムを起動します。コマンド�
 ```
 $ ros2 launch register scan_display.launch.py
 ```
-`xterm`ウィンドウに数値を入力してEnterキーを押すとlaunchコマンドを実行した元の端末でけっかが表示されます。
+`xterm`ウィンドウに数値を入力してEnterキーを押すとlaunchコマンドを実行した元の端末で結果が表示されます。
 ## ライセンス
 - このソフトウェアパッケージは、3条項BSDライセンスの下、再頒布および使用が許可されています。
 - © 2025 Taiki Akiyama
